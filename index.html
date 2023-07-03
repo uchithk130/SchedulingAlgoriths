@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Process Scheduling</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #e4f3f0;">
+  <div class="container">
+    <h2><strong>Process Scheduling</strong></h2>
+    <div class="form-group">
+      <label for="processNumber">Number of Processes:</label>
+      <input type="number" class="form-control" id="processNumber">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="createTable()">Create Table</button>
+    <div class="form-group">
+      <label for="algorithm">Select Algorithm:</label>
+      <select class="form-control" id="algorithm">
+        <option value="FCFS">First-Come, First-Served (FCFS)</option>
+        <option value="SJF">Shortest Job First (SJF)</option>
+        <option value="SJRF">Shortest Job Remaining First (SJRF)</option>
+        <option value="PP">Preemptive Priority (PP)</option>
+        <option value="NPP">Non-Preemptive Priority (NPP)</option>
+        <option value="RR">Round Robin (RR)</option>
+       
+        
+        <!-- Add more options for other algorithms -->
+      </select>
+    </div>
+    <div id="quantumDiv" style="display: none;">
+        <div class="form-group">
+          <label for="quantum">Time Quantum:</label>
+          <input type="number" class="form-control" id="quantum">
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="runAlgorithm()">Run Algorithm</button>
+    <div id="output"></div>
+    <table class="table" id="processTable">
+      <!-- The dynamically created table will be inserted here -->
+    </table>
+    <div><strong style="font-size: 2em;">Execution Order</strong></div>
+    
+    <div class="row">
+      <div class="col-8" id="executionLog"></div>
+      <div class="col-4" id="Averages"></div>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="algorithms.js"></script> 
+</body>
+</html>
