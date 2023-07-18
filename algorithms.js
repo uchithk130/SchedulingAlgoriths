@@ -186,6 +186,14 @@ function runRR(processes){
                 executionLog += l.p + " executing at time " + time + "<br>"; // Append execution log
                 time += quantum;
                 l.remain -= quantum;
+                for (var i = 0; i < processes.length; i++) {
+                  var p = processes[i];
+                  if (p.arrival <= time && p!=l) {
+                    queue.push(p);
+                    processes.splice(i, 1);
+                    i--;
+                  }
+                }
                 queue.push(l);
             }
         } else {
